@@ -56,3 +56,9 @@ alter table employee_payroll add taxable_pay double not null after deductions;
 alter table employee_payroll add tax double not null after taxable_pay;
 alter table employee_payroll add net_pay double not null after tax;
 
+#UseCase10
+
+update employee_payroll set department='Sales' where name='Terisa';
+insert into employee_payroll (name, department, gender, basic_pay, deductions, taxable_pay, tax, net_pay, start) values
+('Terisa', 'Marketing', 'F', 30000000.00, 10000000.00, 20000000.00, 5000000.00, 15000000.00, '2018-11-03');
+
