@@ -7,7 +7,7 @@ use payroll_service;
 #UseCase2
 
 create table employee_payroll(
-id int unsigned not null auto_increment,
+id int unsigned not null auto_increment,cd
 name varchar(150) not null,
 salary double not null,
 start date not null,
@@ -39,3 +39,6 @@ update employee_payroll set gender='M' where name='Bill' or name='Charlie';
 #UseCase7
 
 select gender, avg(salary) from employee_payroll group by gender;
+
+
+ 
