@@ -40,5 +40,11 @@ update employee_payroll set gender='M' where name='Bill' or name='Charlie';
 
 select gender, avg(salary) from employee_payroll group by gender;
 
+#Usecase8
 
- 
+alter table employee_payroll add phone_number varchar(250) after name;
+alter table employee_payroll add address varchar(250) after phone_number;
+alter table employee_payroll add department varchar(150) not null  after address;
+alter table employee_payroll alter address set default 'ABC';
+insert into employee_payroll (name, department, salary, start) values ('Mike', 'Sales', 1000000.00, '2018-01-03');
+
