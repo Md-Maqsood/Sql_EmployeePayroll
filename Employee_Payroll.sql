@@ -48,3 +48,11 @@ alter table employee_payroll add department varchar(150) not null  after address
 alter table employee_payroll alter address set default 'ABC';
 insert into employee_payroll (name, department, salary, start) values ('Mike', 'Sales', 1000000.00, '2018-01-03');
 
+#UseCase9
+
+alter table employee_payroll rename column salary to basic_pay;
+alter table employee_payroll add deductions double not null after basic_pay;
+alter table employee_payroll add taxable_pay double not null after deductions;
+alter table employee_payroll add tax double not null after taxable_pay;
+alter table employee_payroll add net_pay double not null after tax;
+
