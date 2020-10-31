@@ -134,6 +134,14 @@ select gender, avg(net_pay) from
 (employee inner join payroll on employee.employee_id=payroll.employee_id)
 group by gender;
 
+#Usecase12
 
+select * from (employee inner join payroll on employee.employee_id=payroll.employee_id);
+select net_pay from (employee inner join payroll on employee.employee_id=payroll.employee_id) where name='Bill';
+select * from (employee inner join payroll on employee.employee_id=payroll.employee_id) where 
+start between cast('2018-01-01' as date) and date(now());
+select gender, avg(net_pay) from 
+(employee inner join payroll on employee.employee_id=payroll.employee_id)
+group by gender;
 
 
