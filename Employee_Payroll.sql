@@ -39,6 +39,9 @@ update employee_payroll set gender='M' where name='Bill' or name='Charlie';
 #UseCase7
 
 select gender, avg(salary) from employee_payroll group by gender;
+select gender, sum(salary) from employee_payroll group by gender;
+select gender, min(salary) from employee_payroll group by gender;
+select gender, max(salary) from employee_payroll group by gender;
 
 #Usecase8
 
@@ -141,6 +144,15 @@ select net_pay from (employee inner join payroll on employee.employee_id=payroll
 select * from (employee inner join payroll on employee.employee_id=payroll.employee_id) where 
 start between cast('2018-01-01' as date) and date(now());
 select gender, avg(net_pay) from 
+(employee inner join payroll on employee.employee_id=payroll.employee_id)
+group by gender;
+select gender, sum(net_pay) from 
+(employee inner join payroll on employee.employee_id=payroll.employee_id)
+group by gender;
+select gender, min(net_pay) from 
+(employee inner join payroll on employee.employee_id=payroll.employee_id)
+group by gender;
+select gender, max(net_pay) from 
 (employee inner join payroll on employee.employee_id=payroll.employee_id)
 group by gender;
 
